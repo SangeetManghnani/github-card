@@ -15,6 +15,11 @@ class GithubCard extends HTMLElement {
 
         const username = this.getAttribute('username');
         const theme = this.getAttribute('theme');
+        if (theme && theme.length > 1)
+            this.shadowRoot.querySelector('.gh-card').classList.add(theme);
+        const themeKind = this.getAttribute('kind');
+        if (themeKind && themeKind.length > 1)
+            this.shadowRoot.querySelector('.gh-card').classList.add(themeKind);
         const userDataUrl = this.getApi(`users/${username}`);
         const userData = await this.getData(userDataUrl);
         this.renderData(userData);
@@ -35,6 +40,9 @@ class GithubCard extends HTMLElement {
     }
     renderData(jsonData) {
         this.shadowRoot.querySelector('#username').innerHTML = jsonData.name;
+        this.shadowRoot.querySelector('#location').innerHTML = `⚲ ${jsonData.location}`;
+        this.shadowRoot.querySelector('.avatar').href = jsonData.url;
+        this.shadowRoot.querySelector('.avatar img').src = jsonData.avatar_url;
         this.shadowRoot.querySelector('#followers').innerHTML = jsonData.followers;
         this.shadowRoot.querySelector('#following').innerHTML = jsonData.following;
         this.shadowRoot.querySelector('#repos').innerHTML = jsonData.public_repos;

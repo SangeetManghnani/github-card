@@ -9,7 +9,39 @@
 </head>
 
 <body>
-    <gh-card username="SangeetManghnani" theme="material"></gh-card>
+    <style>
+        .container {
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Lato';
+        }
+        
+        .intro {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+        
+        .intro h1 {
+            font-size: 2.5rem;
+        }
+        
+        .intro p {
+            font-size: 1.25rem;
+        }
+    </style>
+    <div class="container">
+        <div class="intro">
+            <h1>Github Card</h1>
+            <p>A Customizable card for your Github Profile. Just One line and there you go!</p>
+        </div>
+        <gh-card username="SangeetManghnani" kind="light"></gh-card>
+    </div>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.14/webcomponents-hi.js"></script> -->
     <link rel="import" href="github-card.html">
 </body>
