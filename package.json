@@ -1,8 +1,8 @@
 {
-    "name": "github-card",
+    "name": "gh-card",
     "version": "1.0.0",
-    "description": "This is a github card component that displays user stats on github",
-    "main": "index.js",
+    "description": "A github card web component that shows the user's github stats",
+    "main": "github-card.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -10,7 +10,9 @@
         "Github-Card",
         "Github",
         "Card",
-        "Plugin"
+        "Plugin",
+        "Web Components",
+        "Github Card Component"
     ],
     "author": "Sangeet Manghnani",
     "license": "ISC",

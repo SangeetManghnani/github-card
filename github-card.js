@@ -1,14 +1,18 @@
+const currentDocument = document.currentScript.ownerDocument;
 class GithubCard extends HTMLElement {
     constructor() {
         super();
-        this.currentDocument = document.currentScript.ownerDocument;
+        // if (document.currentScript !== null)
+        //     this.currentDocument = document.currentScript.ownerDocument;
+        // else
+        //     this.connectedCallback();
         this.baseUrl = 'https://api.github.com/'
     }
 
     async connectedCallback() {
         // setup shadow Dom
         const shadowRoot = this.attachShadow({ mode: 'open' });
-        const template = this.currentDocument.querySelector('#github-card-template');
+        const template = currentDocument.querySelector('#github-card-template');
         const instance = template.content.cloneNode(true);
         shadowRoot.appendChild(instance);
 
@@ -40,12 +44,16 @@ class GithubCard extends HTMLElement {
     }
     renderData(jsonData) {
         this.shadowRoot.querySelector('#username').innerHTML = jsonData.name;
-        this.shadowRoot.querySelector('#location').innerHTML = `⚲ ${jsonData.location}`;
+        if (jsonData.location != null)
+            this.shadowRoot.querySelector('#location').innerHTML = `⚲ ${jsonData.location}`;
         this.shadowRoot.querySelector('.avatar').href = jsonData.url;
         this.shadowRoot.querySelector('.avatar img').src = jsonData.avatar_url;
         this.shadowRoot.querySelector('#followers').innerHTML = jsonData.followers;
         this.shadowRoot.querySelector('#following').innerHTML = jsonData.following;
         this.shadowRoot.querySelector('#repos').innerHTML = jsonData.public_repos;
+        this.shadowRoot.querySelector('#followers_url').href = jsonData.url + '?tab=followers';
+        this.shadowRoot.querySelector('#following_url').href = jsonData.url + '?tab=following'
+        this.shadowRoot.querySelector('#repos_url').href = jsonData.url + '?tab=repositories';
     }
 
 }

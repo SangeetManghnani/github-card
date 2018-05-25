@@ -6,6 +6,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>Github-Card-Sample</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.2/css/uikit.min.css" />
 </head>
 
 <body>
@@ -17,6 +19,7 @@
             flex-direction: column;
             align-items: center;
             font-family: 'Lato';
+            padding-top: 1rem;
         }
         
         .intro {
@@ -25,25 +28,93 @@
             flex-direction: column;
             align-items: center;
             margin-bottom: 3rem;
+            width: 100%;
         }
         
         .intro h1 {
             font-size: 2.5rem;
+            margin: 0;
         }
         
         .intro p {
             font-size: 1.25rem;
+            margin: 0;
+        }
+        
+        .instructions {
+            margin-left: 2rem;
+        }
+        
+        .instructions p {
+            font-size: 0.875rem;
+            background-color: #f6f8fa;
+        }
+        
+        .instructions h2 {
+            font-family: Lato;
+            font-size: 1.5rem;
+        }
+        
+        .uk-switcher {
+            width: 100%;
+        }
+        
+        .uk-switcher {
+            justify-content: center;
+        }
+        
+        .uk-switcher li,
+        .uk-switcher {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
         }
     </style>
     <div class="container">
         <div class="intro">
             <h1>Github Card</h1>
+            <hr class="uk-divider-small">
             <p>A Customizable card for your Github Profile. Just One line and there you go!</p>
+            <ul class="uk-subnav uk-subnav-pill" uk-switcher="animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium">
+                <li><a href="#">Material Light</a></li>
+                <li><a href="#">Material Dark</a></li>
+                <li><a href="#">Sleek</a></li>
+            </ul>
+            <ul class="uk-switcher uk-margin">
+                <li>
+                    <gh-card username="SangeetManghnani" theme="material" kind="light"></gh-card>
+                    <div class="instructions">
+                        <h2>USAGE INSTRUCTIONS</h2>
+                        <p><strong>Link: </strong>&lt;link rel="import" href="../node_modules/github-card/github-card.html"&gt;
+                        </p>
+                        <p><strong>Tag: </strong>&lt;gh-card username=":yourusername" theme="material" kind="light"&gt;</p>
+                    </div>
+                </li>
+                <li>
+                    <gh-card username="SangeetManghnani" theme="material" kind="dark"></gh-card>
+                    <div class="instructions">
+                        <h2>USAGE INSTRUCTIONS</h2>
+                        <p><strong>Link: </strong>&lt;link rel="import" href="../node_modules/github-card/github-card.html"&gt;
+                        </p>
+                        <p><strong>Tag: </strong>&lt;gh-card username=":yourusername" theme="material" kind="dark"&gt;</p>
+                    </div>
+                </li>
+                <li>
+                    <gh-card username="SangeetManghnani" theme="sleek" kind="light"></gh-card>
+                    <div class="instructions">
+                        <h2>USAGE INSTRUCTIONS</h2>
+                        <p><strong>Link: </strong>&lt;link rel="import" href="../node_modules/github-card/github-card.html"&gt;
+                        </p>
+                        <p><strong>Tag: </strong>&lt;gh-card username=":yourusername" theme="sleek" kind="light"&gt;</p>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <gh-card username="SangeetManghnani" kind="light"></gh-card>
     </div>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.14/webcomponents-hi.js"></script> -->
     <link rel="import" href="github-card.html">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.2/js/uikit.min.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

@@ -91,7 +91,63 @@
     color: #ffd739 !important; }
   .gh-card.material.dark #location {
     color: #fff; }
+  .gh-card.material.dark .avatar {
+    border: 3px solid #ffd739 !important; }
   .gh-card.material.dark .stats a {
     color: #fff !important; }
     .gh-card.material.dark .stats a strong {
       color: #ffd739 !important; }
+
+.gh-card.sleek {
+  max-width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 290px;
+  min-height: 0px;
+  background: #ffffff;
+  padding: 0em;
+  border: 1px solid #ededee;
+  border-radius: 0.28571429rem; }
+  .gh-card.sleek .avatar {
+    display: block;
+    border-radius: 0.28571429rem 0.28571429rem 0em 0em !important;
+    border-top: none !important;
+    width: 100%; }
+    .gh-card.sleek .avatar img {
+      width: 100%; }
+  .gh-card.sleek .content h1 {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1.2rem; }
+  .gh-card.sleek .content p {
+    font-size: 1em;
+    color: #606163;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0; }
+  .gh-card.sleek .content ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 15px; }
+    .gh-card.sleek .content ul li {
+      width: 33%;
+      padding: 0px 4px 0px 4px;
+      border-right: 1px solid #666; }
+      .gh-card.sleek .content ul li:last-child {
+        border-right: none; }
+      .gh-card.sleek .content ul li:first-child {
+        padding-left: 0px !important; }
+      .gh-card.sleek .content ul li a {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        color: #60606a;
+        text-decoration: none;
+        font-size: 0.875rem;
+        justify-content: center; }
+        .gh-card.sleek .content ul li a strong {
+          font-weight: 400;
+          margin-right: 0.2rem; }
