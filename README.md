@@ -1,4 +1,4 @@
-![Published on npmjs.com](https://www.npmjs.com/package/gh-card)
+[![NPM version][npm-image]](https://www.npmjs.com/package/gh-card)
 
 # \<gh-card\>
 
