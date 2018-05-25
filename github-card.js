@@ -47,14 +47,14 @@ class GithubCard extends HTMLElement {
         this.shadowRoot.querySelector('#username').innerHTML = jsonData.name;
         if (jsonData.location != null)
             this.shadowRoot.querySelector('#location').innerHTML = `⚲ ${jsonData.location}`;
-        this.shadowRoot.querySelector('.avatar').href = jsonData.url;
+        this.shadowRoot.querySelector('.avatar').href = jsonData.html_url;
         this.shadowRoot.querySelector('.avatar img').src = jsonData.avatar_url;
         this.shadowRoot.querySelector('#followers').innerHTML = jsonData.followers;
         this.shadowRoot.querySelector('#following').innerHTML = jsonData.following;
         this.shadowRoot.querySelector('#repos').innerHTML = jsonData.public_repos;
-        this.shadowRoot.querySelector('#followers_url').href = jsonData.url + '?tab=followers';
-        this.shadowRoot.querySelector('#following_url').href = jsonData.url + '?tab=following'
-        this.shadowRoot.querySelector('#repos_url').href = jsonData.url + '?tab=repositories';
+        this.shadowRoot.querySelector('#followers_url').href = jsonData.html_url + '?tab=followers';
+        this.shadowRoot.querySelector('#following_url').href = jsonData.html_url + '?tab=following'
+        this.shadowRoot.querySelector('#repos_url').href = jsonData.html_url + '?tab=repositories';
     }
 
 }
