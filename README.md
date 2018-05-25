@@ -35,3 +35,4 @@ For Sleek theme
 ```html
 <gh-card username="YourUserNameHere" theme="sleek" kind="light"></gh-card>
 ```
+[npm-image]: https://img.shields.io/npm/v/gh-card.svg?style=flat-square
