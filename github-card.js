@@ -30,7 +30,8 @@ class GithubCard extends HTMLElement {
 
     }
     getApi(endpoint) {
-        this.api = this.baseUrl + endpoint;
+        const accessToken = '254efbce6aab3aba810ec0cfb06f765e2314d09d';
+        this.api = this.baseUrl + endpoint + `?access_token=${accessToken}`;
         return this.api;
     }
     async getData(url) {
